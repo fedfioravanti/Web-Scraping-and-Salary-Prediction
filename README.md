@@ -29,19 +29,15 @@ This document explains the background, the objectives, the methodologies, the co
 
 ## Background
 
-Flight delays are not only painful for passengers, they are also a major problem for airlines.  
-Flights departing after a 15-minute "grace period" are considered delayed, representing on average 21% of the total. The average delay costs the company about $1,100 USD per flight. Fuel and crew costs are, by far, the largest cost driver, followed by aircraft maintenance and ownership.  
-Delays also drive the need for additional airport gates and ground staff and impose costs on airline customers in the form of lost productivity, wages and goodwill.
-The aviation ecosystem would be really interested in finding the factors that have the biggest impact on flight delays, so that they can be addressed from an operational point of view. In this scenario, it is important to analyse an international airport connected to a large number of destinations.  
+Data-related positions are in high demand, and salaries for these positions can vary widely depending on a number of factors, such as the specific job title, the company, the location, and the experience level of the candidate. This can make it difficult for job seekers to know what to expect in terms of salary.  
+
+A model to predict job salaries for data-related positions can be a useful tool for both job seekers and employers. For job seekers, it can help them to set realistic salary expectations and to identify opportunities that are a good match for their skills and experience. For employers, it can help them to benchmark their salaries against the market and to ensure that they are offering competitive salaries to attract and retain top talent.  
 
 <br/><br/>
 
 ## Objectives
 
-The goals of this project is to create a classification model which can:
-
-- Identify the most important factors leading to a delayed flight.
-- Provide insights to the airport operator in order to reduce the overall delays and improve business performance.  
+The goals of this project is to create a classification model which can determine the industry factors that are most important in predicting the salary amounts for data-related positions.
 
 <br/><br/>
 
