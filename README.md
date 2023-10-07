@@ -113,8 +113,8 @@ In the third set the best model was the Random Forest which achieved a CV score 
 In the last set of models Random Forest achieved a CV score of 0.8386, the highest among all models.  
 Both sets observed similar results and performed significantly better than the previous one, and the best model was the Random Forest in the fourth set with a considerable improvement (+0.34) over the baseline of 0.50.  
 
-![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
-![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
+![alt text](./images/71_d_randf_coeff_01.png "D. Random Forest - Impact on Salary by Feature - Largest")
+![alt text](./images/76_final_scores.png "Final Model Scores Evaluation")
 
 The best model achieved an accuracy of 84%, a marked improvement from the 50% accuracy of random selection, however this still resulted in incorrect predictions in 16% of cases.  
 In this scenario, it would be better to falsely predict that someone will earn less than median when in reality they will earn more, so even if the prediction is wrong, they may be happily surprised to earn more than expected.  
@@ -122,7 +122,7 @@ To change our model's predictions so that we do not incorrectly tell someone the
 We set the threshold to 85% to reduce the number of false positives, even though this slightly decreased the model's accuracy.  
 The model achieved a precision of 96% for high salaries, but it was clearly overpredicting low salaries.  
 
-![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
+![alt text](./images/77_class_metrics_threshold.png "Classification Metrics at Different Thresholds")
 
 <br/><br/>
 
@@ -140,7 +140,7 @@ Additional work could be aimed at extracting relevant information, especially ab
 
 The nature of this project was primarily exploratory, so no hypothesis were made about which factor might have the greatest impact on data-related job salaries.  
 
-The latest Random Forest model using GridSearchCV (with predictors enhanced by TfidfVectorizer) achieved an accuracy score of 0.8379 and a CV score of 0.8386.  
+The latest Random Forest model using GridSearchCV (which implemented TfidfVectorizer to extract features) achieved an accuracy score of 0.8379 and a CV score of 0.8386.  
 The model was balanced between the two classes, had a good accuracy and indeed a very good class separation capacity.  
 
 The most prominent features for this model were the job titles containing engineer, senior and the remote work arrangement, meaning that engineering-related jobs and higher-level positions had the greatest impact in predicting job salaries.  
@@ -155,7 +155,7 @@ To further improve the current work, the following steps should be taken:
 * Using more precise location tags than the company state, possibly by extracting the ZIP code
 * Imputing values where missing, to avoid the removal of entire observations.
 * Removing outliers, after further analysis and due diligence of the plausible values.
-* Employing XGBoost and additional classifiers, checking the effects on the model's performance.  
+* Employing Gradient Boosting, XGBoost and ensemble methods, checking the effects on the model's performance.  
 
 
 <br/><br/>
