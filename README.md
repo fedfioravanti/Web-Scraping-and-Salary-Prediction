@@ -80,12 +80,7 @@ The most common job titles are Senior Data Engineer and Senior Software Engineer
 Leadership positions with the highest median salary (equal to $225,000) are those containing the word head, which are also the rarest, while those related to manager show the lowest median salary (equal to $107,500) which is less than the median salary for all roles.  
 The black dotted line represents the median salary for all roles in the main dataset, which is equal to $114,500.  
 
-<p float="left">
-  <img src="./images/10_rel_delay_month.png" width="59%" />
-  <img src="./images/12_rel_delay_day.png" width="40%" />
-</p>
-
-  ![alt text](./images/14_rel_delay_hour.png "Flight Delays by Hour - Relative")
+![alt text](./images/11_company_city_barp.png "Company City Distribution")
 
 The cities with the most job listings are New York City, Denver and Austin, and those with the highest median salary are Overland Park (KS), Santa Clara (CA) and Mountain View (CA), which are also the only ones exceeding $150,000.  
 
