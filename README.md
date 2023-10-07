@@ -16,7 +16,7 @@ This document explains the background, the objectives, the methodologies, the co
 [Background](#Background)  
 [Objectives](#Objectives)  
 [Data Collection](#Data-Collection)  
-[Data Preparation & Cleaning](#Data-Preparation-&-Cleaning)  
+[Data Cleaning & Processing](#Data-Cleaning-&-Processing)  
 [Exploratory Data Analysis](#Exploratory-Data-Analysis)  
 [Modelling](#Modelling)  
 [Limitations](#Limitations)  
@@ -69,18 +69,13 @@ All work was done in Python on Jupyter notebooks, and the processing revolved ar
 ## Exploratory Data Analysis
   
   
-![alt text](./images/01_heatmap_01.png "Heatmap of correlations between continuous variables")
-![alt text](./images/04_boxplot_01.png "Box plots of continuous variables")
+![alt text](./images/01_salary_histp.png "Salary Distribution")
+![alt text](./images/02_jobtitle_barp.png "Job Title Distribution")
 
 Initial EDA showed that salary has a typical right skewed distribution with the median equal to $114,500.  
 The most common job titles are Senior Data Engineer and Senior Software Engineer, but the majority (~61%) of the job titles in the dataset are unique.  
-  
-<p float="left">
-  <img src="./images/06_total_month.png" width="59%" />
-  <img src="./images/07_total_day.png" width="40%" />
-</p>
 
-  ![alt text](./images/08_total_hour.png "Average Flights per Hour")
+![alt text](./images/07_leadership_median_barp.png "Median Salary Distribution by Leadership Position")
 
 Leadership positions with the highest median salary (equal to $225,000) are those containing the word head, which are also the rarest, while those related to manager show the lowest median salary (equal to $107,500) which is less than the median salary for all roles.  
 The black dotted line represents the median salary for all roles in the main dataset, which is equal to $114,500.  
@@ -139,20 +134,21 @@ The model achieved a precision of 96% for high salaries, but it was clearly over
 
 ## Limitations
 
-The main limitations to this project come from the original operational dataset: it contains some apparently contradictory features for which very little information is available.  
-Another limitation of the dataset is that it did not include any information about the actual delay time, but we could only infer the flight status.  
-Additional work could be aimed at matching every flight with the relative apron spot and gate in the terminal building: this could help in performing a geospatial analysis to improve efficiency of airport facilities.  
+The main limitations of this project arise from the fact that it uses averaged salaries from ranges, which can be quite broad. It would be interesting to compare the performance of the model with precise salaries to see how much of an impact this has.  
+Another limitation of the dataset, directly related to Indeed.com, is that it did not include any information about the company size, sector, and revenue.  
+Additional work could be aimed at extracting relevant information, especially about the job responsibilities, from the job description using NLP techniques.  
 
 
 <br/><br/>
 
 ## Conclusion
 
-The nature of this project was primarily exploratory, so no hypothesis were made about which factor could have the greatest impact on a delayed flight.  
+The nature of this project was primarily exploratory, so no hypothesis were made about which factor might have the greatest impact on data-related job salaries.  
 
-The final parameters tuning using GridSearchCV gave an accuracy score of 0.7973 and a CV score of 0.7805: however the model was overfitting and biased towards the majority class, which showed a good precision score and a very good recall score. The average precision score and the bad recall score for the minority class confirmed the unbalanced behaviour of the model.  
+The latest Random Forest model using GridSearchCV (with predictors enhanced by TfidfVectorizer) achieved an accuracy score of 0.8379 and a CV score of 0.8386.  
+The model was balanced between the two classes, had a good accuracy and indeed a very good class separation capacity.  
 
-The time of the flight and the baggage weight seem to be the most important factors in a delay, which was partly reflected in the previous EDA.  
+The most prominent features for this model were the job titles containing engineer, senior and the remote work arrangement, meaning that engineering-related jobs and higher-level positions had the greatest impact in predicting job salaries.  
 
 
 <br/><br/>
@@ -160,10 +156,10 @@ The time of the flight and the baggage weight seem to be the most important fact
 ## Future Work
 
 To further improve the current work, the following steps should be taken:
-* Feature Engineering, with the creation of additional features such as aircraft size category and aircraft typology.
+* Feature Engineering, with the creation of additional features such as company sector, company longevity and job responsibilities.
+* Using more precise location tags than the company state, possibly by extracting the ZIP code
 * Imputing values where missing, to avoid the removal of entire observations.
 * Removing outliers, after further analysis and due diligence of the plausible values.
-* Splitting the dataset between arriving and departing flights, examining whether the accuracy and the effectiveness of the model could be enhanced.
 * Employing XGBoost and additional classifiers, checking the effects on the model's performance.  
 
 
@@ -175,28 +171,3 @@ Please feel free to contact me on [LinkedIn](https://www.linkedin.com/in/fedfior
 
 
 <br/><br/>
-
-
-
-
-
-
-
-
-
-
-
-
-## Business Case Overview
-
-You're working as a data scientist for a contracting firm that's rapidly expanding. Now that they have their most valuable employee (you!), they need to leverage data to win more contracts. Your firm offers technology and scientific solutions and wants to be competitive in the hiring market. Your principal wants you to
-
-   - determine the industry factors that are most important in predicting the salary amounts for these data.
-
-To limit the scope, your principal has suggested that you *focus on data-related job postings*, e.g. data scientist, data analyst, research scientist, business intelligence, and any others you might think of. You may also want to decrease the scope by *limiting your search to a single region.*
-
-Hint: Aggregators like [Indeed.com](https://www.indeed.com) regularly pool job postings from a variety of markets and industries.
-
-**Goal:** Scrape your own data from a job aggregation tool like Indeed.com in order to collect the data to best answer this question.
-
-
