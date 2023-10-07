@@ -119,16 +119,18 @@ Among the three models implemented, the best was the Random Forest which achieve
 
 Instead of using a limited set of functions to extract information, I enhanced the initial models by implementing NLP (Natural Language Processing) techniques. Specifically, I used CountVectorizer on the third set and TfidfVectorizer on the fourth and final set of models to extract features from the job title.  
 
-In the third set of models Random Forest achieved the highest CV score of 0.8318, once again a significant improvement compared to the previous models that used a defined number of features.  
+In the third set the best model was the Random Forest which achieved a CV score of 0.8318, once again a significant improvement compared to the previous models that used a defined number of features.  
 In the last set of models Random Forest achieved a CV score of 0.8386, the highest among all models.  
 Both sets observed similar results and performed significantly better than the previous one, and the best model was the Random Forest in the fourth set with a considerable improvement (+0.34) over the baseline of 0.50.  
 
+![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
+![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
 
-
-
-
-
-
+The best model achieved an accuracy of 84%, a marked improvement from the 50% accuracy of random selection, however this still resulted in incorrect predictions in 16% of cases.  
+In this scenario, it would be better to falsely predict that someone will earn less than median when in reality they will earn more, so even if the prediction is wrong, they may be happily surprised to earn more than expected.  
+To change our model's predictions so that we do not incorrectly tell someone they will earn more than the median, we had to raise the threshold for predicting a high salary.  
+We set the threshold to 85% to reduce the number of false positives, even though this slightly decreased the model's accuracy.  
+The model achieved a precision of 96% for high salaries, but it was clearly overpredicting low salaries.  
 
 ![alt text](./images/27_GBC_features.png "Gradient Boosting Classifier - Most Important Features")
 
