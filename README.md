@@ -81,16 +81,16 @@ Leadership positions with the highest median salary (equal to $225,000) are thos
 The black dotted line represents the median salary for all roles in the main dataset, which is equal to $114,500.  
 
 ![alt text](./images/11_company_city_barp.png "Company City Distribution")
+![alt text](./images/12_company_city_median_barp.png "Median Salary Distribution by City")
 
 The cities with the most job listings are New York City, Denver and Austin, and those with the highest median salary are Overland Park (KS), Santa Clara (CA) and Mountain View (CA), which are also the only ones exceeding $150,000.  
 
-
-
+![alt text](./images/13_company_state_barp.png "Company State Distribution")
+![alt text](./images/14_company_state_median_barp.png "Median Salary Distribution by State")
 
 The states with the most job listings are New York, California and Colorado, and those with the highest median salary are Delaware, New York, Kansas and California.  
 
-
- 
+![alt text](./images/17_work_arrangement_histp.png "Salary Distribution by Work Arrangement")
 
 On-site listings are the most frequent in the dataset while hybrid listings are the smallest subset; remote positions have the highest mean and median salary while hybrid ones have the lowest.  
 
