@@ -160,6 +160,23 @@ To further improve the current work, the following steps should be taken:
 
 <br/><br/>
 
+## Libraries Used
+
+* Pandas
+* NumPy
+* Requests
+* Beautiful Soup
+* Selenium
+* Re
+* Matplotlib
+* Seaborn
+* Plotly
+* Graphviz
+* Scikit-Learn  
+
+
+<br/><br/>
+
 ## Contact
 Interested in discussing my project further?  
 Please feel free to contact me on [LinkedIn](https://www.linkedin.com/in/fedfioravanti/).  
