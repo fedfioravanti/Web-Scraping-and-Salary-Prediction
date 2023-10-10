@@ -21,8 +21,8 @@ This document explains the background, the objectives, the methodologies, the co
 [Modelling](#Modelling)  
 [Limitations](#Limitations)  
 [Conclusion](#Conclusion)  
-[Future Work](#Future-Work)
-[Libraries Used](#Libraries-Used)
+[Future Work](#Future-Work)  
+[Libraries Used](#Libraries-Used)  
 [Contact](#Contact)  
 
 
